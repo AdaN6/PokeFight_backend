@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 4000;
 const cors = require('cors');
@@ -7,7 +8,7 @@ const cors = require('cors');
 let jsonData = require('./pokemon.json');
 
 app.use(express.json());
-app.use(cors({ origin: '*' }));
+app.use(cors());
 
 // app.use(
 //     cors({
