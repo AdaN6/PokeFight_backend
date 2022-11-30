@@ -1,11 +1,19 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const cors = require('cors');
 
 //import json data
 let jsonData = require('./pokemon.json');
 
+app.use(express.json());
+app.use(cors({ origin: '*' }));
+
+// app.use(
+//     cors({
+//       origin: ["http://192.168.0.150:3000", "http://localhost:3000" ]
+//     })
+//   );
 
 // //Create a GET route on /pokemon which gives the complete list of pokemon from the JSON
 // app.get('/pokemon', (req, res) => {
@@ -34,7 +42,7 @@ let jsonData = require('./pokemon.json');
 //   }
   
 // })
-app.use(cors({ origin: '*' }));
+
 
 app.use('/pokemon', require('./routes/route.js'));
 
