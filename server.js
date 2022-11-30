@@ -1,8 +1,8 @@
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 4000;
-const cors = require('cors');
+
 
 //import json data
 let jsonData = require('./pokemon.json');
@@ -10,9 +10,13 @@ let jsonData = require('./pokemon.json');
 app.use(express.json());
 app.use(cors());
 
+// app.use(cors({
+//         origin: "*",
+//       }));
+
 // app.use(
 //     cors({
-//       origin: ["http://192.168.0.150:3000", "http://localhost:3000" ]
+//       origin: "http://localhost:3000",
 //     })
 //   );
 
