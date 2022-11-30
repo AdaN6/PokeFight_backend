@@ -1,10 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
 //import json data
-let jsonData = require('./pokemon.json');
-
+let jsonData = require("./pokemon.json");
 
 // //Create a GET route on /pokemon which gives the complete list of pokemon from the JSON
 // app.get('/pokemon', (req, res) => {
@@ -31,12 +31,11 @@ let jsonData = require('./pokemon.json');
 //   } else if (info === 'type') {
 //     res.send(pokemon.type);
 //   }
-  
+
 // })
 
-
-app.use('/pokemon', require('./routes/route.js'));
+app.use("/pokemon", require("./routes/route.js"));
 
 app.listen(port, () => {
-    console.log(`app listening on port ${port}`);
-  });
+  console.log(`app listening on port ${port}`);
+});
