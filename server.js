@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+const cors = require('cors');
 
 //import json data
 let jsonData = require('./pokemon.json');
@@ -33,7 +34,7 @@ let jsonData = require('./pokemon.json');
 //   }
   
 // })
-
+app.use(cors({ origin: '*' }));
 
 app.use('/pokemon', require('./routes/route.js'));
 
