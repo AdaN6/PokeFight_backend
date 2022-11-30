@@ -1,6 +1,6 @@
 
 🔨 #PokeFight
-PART I: NodeJS API with ExpressJS
+PART I: NodeJS API with ExpressJS<br>
 Create an empty ExpressJS application.
 Download the following JSON: https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json  and use this file for the following 3 routes. You can store this file at the root of your application and import it as a JSON file (with require()) 
 let jsonData = require(‘./file.json’)
