@@ -1,12 +1,21 @@
-const {Router} = require("express");
+const express = require("express");
 
 const data = require("../pokemon.json");
 
+const pokemonsRouter = express.Router();
 
+//pokemonsRouter.route("/").get(getAllPokemons);
 
-const pokemonsRouter = Router();
+pokemonsRouter.get("/", (req,res)=>{
+    res.send(data)
+})
 
-pokemonsRouter.route("/").get(getAllPokemons);
+//GET POKEMON WITH ID
+pokemonsRouter.get( "/:id", (req,res)=>{
+    const result = data.pokemon.filter(element => element.id == req.params.id)
+    //console.log(result)
+    res.send(result)
+})
 
-module.export = pokemonsRouter;
+module.exports = pokemonsRouter;
 
