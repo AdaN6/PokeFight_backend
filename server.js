@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -19,6 +20,7 @@ app.use(cors());
 //       origin: "http://localhost:3000",
 //     })
 //   );
+
 
 // //Create a GET route on /pokemon which gives the complete list of pokemon from the JSON
 // app.get('/pokemon', (req, res) => {
@@ -45,12 +47,11 @@ app.use(cors());
 //   } else if (info === 'type') {
 //     res.send(pokemon.type);
 //   }
-  
+
 // })
 
-
-app.use('/pokemon', require('./routes/route.js'));
+app.use("/pokemon", require("./routes/route.js"));
 
 app.listen(port, () => {
-    console.log(`app listening on port ${port}`);
-  });
+  console.log(`app listening on port ${port}`);
+});
